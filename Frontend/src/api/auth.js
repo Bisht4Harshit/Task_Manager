@@ -2,12 +2,12 @@ import { apiRequest } from './client';
 import { normalizeUser } from '../utils/user';
 
 export async function getCurrentUser() {
-  const currentUser = await apiRequest('/api/users/current');
+  const currentUser = await apiRequest('/users/current');
   return normalizeUser(currentUser);
 }
 
 export async function loginUser(credentials) {
-  const data = await apiRequest('/api/users/login', {
+  const data = await apiRequest('/users/login', {
     method: 'POST',
     body: JSON.stringify(credentials),
   });
@@ -25,7 +25,7 @@ export async function loginUser(credentials) {
 }
 
 export async function registerUser(payload) {
-  return apiRequest('/api/users/register', {
+  return apiRequest('/users/register', {
     method: 'POST',
     body: JSON.stringify(payload),
   });
