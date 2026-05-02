@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.env.local
+npm-debug.log*
+vite-dev.log
+
+/config/
+/controllers/
+/middleware/
+/models/
+/routes/
+/constants.js
+/index.js
+/package.json
+/package-lock.json
