@@ -25,7 +25,7 @@ export async function loginUser(credentials) {
 }
 
 export async function registerUser(payload) {
-  return apiRequest('/users/register', {
+  return apiRequest('/api/users/register', {
     method: 'POST',
     body: JSON.stringify(payload),
   });
