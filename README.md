@@ -1,42 +1,95 @@
-# Team Task Manager
+Team Task Manager (Full-Stack)
 
-Full-stack team task manager with an Express/MongoDB backend and React/Vite frontend.
+A role-based task management web application where Admins can manage projects and assign tasks, and Members can track and update their tasks.
 
-## Project Structure
+🔗 Live Demo
+🌐 Frontend: [add your deployed frontend URL]
+⚙️ Backend API: [add your Railway backend URL]
+Features ----
+   Authentication & Authorization
+   User registration & login (JWT-based)
+   Role-based access control (Admin / Member)
+   Project Management
 
-```txt
-Backend/   Express API
-Frontend/  React frontend
-```
+Admin can: 
+   Create projects
+   Assign team members to projects
+   Create and assign tasks 
 
-## Railway Deployment
+Members can:
+   View assigned tasks
+   Update task status (todo → in-progress → done)
 
-Create two Railway services from the same GitHub repo.
 
-### Backend Service
+Tech Stack--
 
-- Root directory: `Backend`
-- Build command: `npm install`
-- Start command: `npm start`
-- Required variables:
+ Frontend :
+            React (Vite)
+            Fetch API / Axios
+            LocalStorage (JWT handling)
+ Backend :
+          Node.js
+          Express.js
+          MongoDB (Mongoose)
+          
+ Deployment :
+             Railway (Backend + Frontend)
+             MongoDB Atlas (Database)
 
-```env
-MONGO_URI=your_mongodb_connection_string
-ACCESS_TOKEN_SECRET=your_jwt_secret
-CLIENT_URL=https://your-frontend-url.up.railway.app
-```
 
-Railway provides `PORT` automatically.
+             
+Project Structure -----
 
-### Frontend Service
 
-- Root directory: `Frontend`
-- Build command: `npm install && npm run build`
-- Start command: `npm start`
-- Required variables:
+Team_Task_Manager/
+│
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   └── index.js
+│
+├── frontend/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   └── api/
+│
+└── README.md
 
-```env
-VITE_API_URL=https://your-backend-url.up.railway.app/api
-```
 
-After changing `VITE_API_URL`, redeploy the frontend because Vite reads it during build time.
+Environment Variables ---
+        Backend (.env)
+        PORT=5001
+        MONGO_URI=your_mongodb_connection_string
+        ACCESS_TOKEN_SECRET=your_secret_key
+        Frontend (.env)
+        VITE_API_URL=https://your-backend-url.up.railway.app
+
+        
+API Endpoints -----
+ 
+Auth ->
+
+POST /api/users/register
+POST /api/users/login
+GET /api/users/current
+
+Projects ->
+
+POST /api/project
+GET /api/project
+GET /api/project/:id
+
+Tasks -> 
+
+POST /api/tasks
+GET /api/tasks
+GET /api/tasks/:id
+PUT /api/tasks/:id
+DELETE /api/tasks/:id
+
+
+Author - Harshit Bisht
