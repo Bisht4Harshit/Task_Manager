@@ -2,7 +2,7 @@ import { apiRequest } from './client';
 import { normalizeUser } from '../utils/user';
 
 export async function getCurrentUser() {
-  const currentUser = await apiRequest('/users/current');
+  const currentUser = await apiRequest('/api/users/current');
   return normalizeUser(currentUser);
 }
 
