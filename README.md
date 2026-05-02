@@ -72,7 +72,7 @@ ACCESS_TOKEN_SECRET=your_secret_key
 
 ### Frontend (.env)
 
-VITE_API_URL=https://your-backend-url.up.railway.app
+VITE_API_URL=deployed_url
 
 
 
