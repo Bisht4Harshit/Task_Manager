@@ -7,7 +7,7 @@ export async function getCurrentUser() {
 }
 
 export async function loginUser(credentials) {
-  const data = await apiRequest('/users/login', {
+  const data = await apiRequest('/api/users/login', {
     method: 'POST',
     body: JSON.stringify(credentials),
   });
