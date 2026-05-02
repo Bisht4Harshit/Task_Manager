@@ -3,7 +3,13 @@ const mongoose = require("mongoose");
 const connectDb = async () => {
    try {
 
-    const connect = await mongoose.connect(process.env.CONNECTION_STRING);
+    const mongoUri = process.env.CONNECTION_STRING || process.env.MONGO_URI;
+
+    if (!mongoUri) {
+      throw new Error("MongoDB connection string is missing");
+    }
+
+    const connect = await mongoose.connect(mongoUri);
     console.log("Database connected", connect.connection.host, connect.connection.name);
     
    } catch (err) {
